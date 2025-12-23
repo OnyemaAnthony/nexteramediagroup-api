@@ -42,6 +42,60 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[Redberry](https://redberry.international/laravel-development)**
 - **[Active Logic](https://activelogic.com)**
 
+---
+
+## 🚀 Running the API Locally
+
+Follow these steps to get the API running on your local machine after cloning the repository.
+
+### Prerequisites
+* **PHP** >= 8.1
+* **Composer** (PHP Dependency Manager)
+
+### Installation Steps
+
+1.  **Clone the Repository**
+    ```bash
+    git clone <your-repo-url>
+    cd <project-folder>
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    composer install
+    ```
+
+3.  **Environment Setup**
+    Create the environment file from the example:
+    ```bash
+    cp .env.example .env
+    ```
+    Generate the application key:
+    ```bash
+    php artisan key:generate
+    ```
+
+4.  **Install API Support** (Required for Laravel 11+)
+    Ensure API middleware and routes are installed:
+    ```bash
+    php artisan install:api
+    ```
+    *(Type `yes` if prompted to run migrations, though not strictly required for the mock data).*
+
+5.  **Start the Server**
+    Run the development server on all interfaces (host `0.0.0.0`) so mobile emulators can access it:
+    ```bash
+    php artisan serve --host 0.0.0.0 --port 8000
+    ```
+
+### Accessing the API
+
+* **Browser / Postman:** `http://localhost:8000/api/users`
+* **Android Emulator:** `http://10.0.2.2:8000/api/users`
+* **iOS Simulator:** `http://localhost:8000/api/users`
+
+---
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
